@@ -1,0 +1,268 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f6f1;
+    padding: 20px;
+}
+
+.review-form-container {
+    width: 90%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border: none;
+}
+
+.form-group {
+    margin-bottom: 50px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form_input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: solid 1px #e5e5e5;
+    padding-left: 20px;
+    margin-bottom: 19px;
+}
+
+.input_review {
+    display: block;
+    width: 100%;
+    border: solid 1px #e5e5e5;
+    margin-top: 23px;
+    padding-left: 20px;
+    padding-top: 13px;
+}
+
+.user_star_rating {
+    display: inline-block;
+    margin-left: 18px;
+}
+
+.user_star_rating li {
+    display: inline-block;
+    margin-right: -3px;
+    cursor: pointer;
+}
+
+.user_star_rating li i {
+    color: #f5c136;
+    font-size: 18px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-actions .add-photos,
+.form-actions .review_submit_btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.form-actions .add-photos {
+    background-color: #ffffff;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.form-actions .add-photos:before {
+    content: '📷';
+    margin-right: 5px;
+}
+
+.form-actions .review_submit_btn:hover {
+    background-color: #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+.loading-screen {
+    opacity: 0;
+    z-index: -1;
+    transition: opacity ease 0.5s;
+}
+
+.loading-screen.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-inner img {
+    margin: 0 auto;
+    height: 500px;
+    max-width: 95%;
+}
+
+.reviews_title {
+    margin-bottom: 58px;
+}
+
+.user_review_container {
+    width: 100%;
+    margin-bottom: 37px;
+}
+
+.reviews_col {
+    padding-right: 30px;
+}
+
+.user_pic {
+    width: 70px;
+    height: 70px;
+    background: #ebebeb;
+    border-radius: 50%;
+}
+
+.user_rating .star_rating {
+    margin-left: 5px;
+    margin-top: 13px;
+}
+
+.user_rating .star_rating li {
+    margin-right: -3px;
+}
+
+.user_rating .star_rating li i {
+    font-size: 12px;
+}
+
+.review {
+    padding-left: 30px;
+}
+
+.review_date {
+    color: #fe4c50;
+    margin-top: -4px;
+}
+
+.user_name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.review p {
+    font-weight: 400;
+}
+
+.add_review {
+    margin-top: 94px;
+}
+
+#review_form > div {
+    margin-bottom: 40px;
+}
+
+#review_form div:nth-child(2) h1 {
+    display: inline-block;
+}
+
+#review_form div:nth-child(2) {
+    margin-bottom: 20px;
+}
+
+#review_form > div:last-child {
+    margin-bottom: 0px;
+}
+
+.add_review h1 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Remove border from the card */
+.card {
+    border: none;
+}
+
+.limited-badge {
+    color: rgb(188, 168, 40);
+}
+
+.overlay-mask {
+    background-color: rgba(251, 251, 251, 0.15);
+}
+
+.product-image-container {
+    height: 320px;
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.product-hover-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.quick-add {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8B4513;
+    font-size: 20px;
+    color: #FFFFFF;
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    text-decoration: none;
+}
+
+.quick-add:hover {
+    color: #FFFFFF;
+}
+
+.card-body .price {
+    color: rgb(184, 144, 84);
+}
+
+.card-body .price del {
+    text-decoration: line-through;
+}
+
+/* Additional styles for image preview */
+
+.photos-preview {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.photos-preview img {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 50px; /* Adjust the width of the preview images */
+    height: 50px; /* Adjust the height of the preview images */
+    object-fit: cover;
+}

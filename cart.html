@@ -1,0 +1,41 @@
+<table class="table table-bordered table-condensed">
+    <tr>
+        <th>Sản Phẩm</th>
+        <th>Hình Ảnh</th>
+        <th>Chi Tiết Sản Phẩm</th>
+        <th>Giá</th>
+        <th>Số Lượng</th>
+        <th>Tổng Giá</th>
+
+        
+    </tr>
+    <tr ng-repeat="sp in cart" ng-init="index = $index">
+        <td>{{ sp.name | uppercase }}</td>
+        <td><img class="card-prod" ng-src="{{ sp.img }}" alt="" style="height: 200px; max-width: 100%;"></td>
+        <td>{{ sp.chitietsp }}</td>
+        <td>{{sp.price | currency:'':0}} vnđ</td>
+        <td>
+            <button class="btn btn-sm btn-warning" ng-click="decrementQuantity(sp)">-</button>
+
+            {{sp.quantity}}
+
+            <button class="btn btn-sm btn-success" ng-click="incrementQuantity(sp)">+</button>
+
+        </td>
+        <td>{{sp.quantity * sp.price | currency:'':0}} vnđ</td>
+        <td>  
+            <button class="btn btn-danger" ng-click="removeItem(index)">Xóa Sản Phẩm</button>
+        </td>
+    </tr>
+</table>
+<div style="text-align: right;">
+    <h4>Tổng giá tiền: {{ totalAmount | currency:'':0 }} vnđ</h4>
+    <button class="btn btn-primary" style="text-align: right;">Mua Hàng</button>
+</div>
+
+<div>
+    &ensp;
+</div>
+<div>
+    &ensp;
+</div>

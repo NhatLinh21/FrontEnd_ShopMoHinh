@@ -1,0 +1,225 @@
+<div class="container-fluid">
+    <header class="row">
+        <div class="shopping-mall">
+            <h1>MÔ HÌNH CHÍNH HÃNG SIÊU CẤP VIP PRO</h1>
+
+            <h5 style="float: right;"><!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Đăng Kí
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Đăng Kí Tài Khoản</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form name="dangki" ng-submit="submitForm()" ng-init="initializeForm()">
+                                    <div class="mb-3">
+                                        <label for="fullname" class="form-label">Tên Đăng Nhập</label>
+                                        <input type="text" required ng-model="fullname" ng-pattern="/^(?=.*[A-Z])(?=.*\d).{5,}$/" class="form-control" name="fullname" id="fullname" aria-describedby="fullnamehelpId" placeholder="" />
+                                        <small ng-show="dangki.fullname.$dirty && dangki.fullname.$error.required" id="fullnamehelpId" class="form-text text-muted">Vui lòng nhập tên đăng nhập</small>
+                                        <small ng-show="dangki.fullname.$dirty && dangki.fullname.$error.pattern" id="fullnamehelpId" class="form-text text-muted">Tên đăng nhập phải có ít nhất một chữ hoa, một số, và ít nhất 5 ký tự</small>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" ng-model="email" required class="form-control" name="email"
+                                            id="email" aria-describedby="emailhelpId" placeholder="" />
+                                        <small ng-show="dangki.email.$dirty && dangki.email.$error.required"
+                                            id="emailhelpId" class="form-text text-muted">Email không được bỏ
+                                            trống</small>
+                                        <small ng-show="dangki.email.$dirty && dangki.email.$error.email"
+                                            id="emailhelpId" class="form-text text-muted">Email không hợp lệ</small>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="pass" class="form-label">Mật Khẩu</label>
+                                        <input type="password" required maxlength="25" ng-model="pass"
+                                            class="form-control" name="pass" id="pass" aria-describedby="passhelpId"
+                                            placeholder="" />
+                                        <small ng-show="dangki.pass.$dirty && dangki.pass.$error.required"
+                                            id="passhelpId" class="form-text text-muted">Vui lòng nhập mật khẩu</small>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Nhập Lại Mật Khẩu</label>
+                                        <input type="password" class="form-control" ng-model="confirmPass"
+                                            name="confirmPass" ng-pattern="pass" required />
+                                        <small ng-show="dangki.confirmPass.$dirty && dangki.confirmPass.$error.required"
+                                            id="confirmPasshelpId" class="form-text text-muted">Vui lòng nhập lại mật
+                                            khẩu</small>
+                                        <small ng-show="dangki.confirmPass.$dirty && dangki.confirmPass.$error.pattern"
+                                            id="confirmPasshelpId" class="form-text text-muted">Mật khẩu không
+                                            khớp</small>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                            ng-click="resetForm()">Hủy</button>
+                                        <button type="submit" class="btn" ng-disabled="dangki.$invalid">Đăng Kí</button>
+                                    </div>
+                                </form>
+                                
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Đăng Nhập </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Đăng Nhập</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form name="dangnhap" ng-submit="submitForm()">
+                                    <div class="mb-3">
+                                        <label for="exampleInputName" class="form-label">Tên Đăng Nhập</label>
+                                        <input type="text" class="form-control" id="exampleInputName" ng-model="username" ng-pattern="/^(?=.*[A-Z])(?=.*\d).{5,}$/"
+                                            required />
+                                        <small ng-show="dangnhap.$dirty && dangnhap.$error.pattern" class="form-text text-muted">
+                                            Tên đăng nhập phải có ít nhất một chữ viết hoa, một số và dài hơn 5 ký tự.
+                                        </small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Mật Khẩu</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" ng-model="password" required>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        <button type="button" class="btn" ng-disabled="!password" ng-click="login()">Đăng Nhập</button>
+                                    </div>
+                                </form>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </h5>
+
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <!-- <form class="d-flex" role="search" style="margin-top: 80px;">
+                    <input class="form-control me-2" type="text" placeholder="Tìm Kiếm" aria-label="Search"
+                     ng-model="keyword">
+                    <button class="btn " type="submit"><i class="fa-solid fa-magnifying-glass"
+                            style="color: #fd7272;"></i></button>
+                </form> -->
+            </div>
+            <div class="col-md-6">
+                <img src="TaiNguyen/images/logo.webp" class="pull-right"
+                    style=" display: block; margin-left: auto ; margin-right: auto; ">
+
+
+            </div>
+            <div class="col-md-3" style="margin-top: 80px;margin-left: auto;margin-right: auto">
+                <button class="btn " type="submit" href="#!cart"><i class="fa-solid fa-cart-shopping"
+                        style="color: #fd7272;"></i>
+                    <a href="#!cart" style="text-decoration: #ffffff; color: black;">Giỏ Hàng</a></button>
+
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid" style="background-color: #fd7272; margin-left: 20px;  ">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: center;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><i
+                                    class="fa-solid fa-house"></i>Trang Chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-list" style="color: black"></i></i>&nbsp; TẤT CẢ SẢN PHẨM
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#"><i
+                                            class="fa-solid fa-arrow-right fa-beat"></i>&nbsp; HÀNG CHÍNH
+                                        HÃNG</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#!mohinhonepiece"><i
+                                            class="fa-solid fa-arrow-right fa-beat"></i>&nbsp; MÔ HÌNH ONE PIECE
+                                    </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                <li><a class="dropdown-item" href="#!mohinhjjks"><i
+                                            class="fa-solid fa-arrow-right fa-beat"></i>&nbsp; MÔ HÌNH JUJUSSU
+                                        KAISEN </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                        </li>
+                        <li><a class="dropdown-item" href="#!mohinhdragonball"><i
+                                    class="fa-solid fa-arrow-right fa-beat"></i>&nbsp MÔ HÌNH DRAGON BALL </a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#!mohinhnaruto"><i
+                                    class="fa-solid fa-arrow-right fa-beat"></i>&nbsp; MÔ HÌNH
+                                NARUTO</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#!mohinhlmht"><i
+                                    class="fa-solid fa-arrow-right fa-beat"></i>&nbsp; MÔ HÌNH
+                                LIÊN MINH HUYỀN THOẠI</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right fa-beat"></i>&nbsp; MÔ
+                                HÌNH
+                                POKEMON</a></li>
+
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!huongdanmuahang">Hướng Dẫn Mua Hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!about">Giới thiệu</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!contact">Liên hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!cart">Giỏ Hàng</a>
+                    </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+</div>

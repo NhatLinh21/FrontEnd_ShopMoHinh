@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Testimonials</title>
+</head>
+<style>
+/* styles.css */
+.button-container {
+    display: flex;
+    justify-content: center; /* Căn giữa các phần tử trong container */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-top: 50px; /* Khoảng cách từ đầu trang đến container */
+}
+
+.btn, .input-field {
+    padding: 10px 20px; /* Khoảng cách bên trong nút và input */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Con trỏ chuột khi hover vào nút và input */
+    border: none; /* Loại bỏ đường viền */
+    margin: 0; /* Loại bỏ khoảng cách bên ngoài */
+    outline: none; /* Loại bỏ viền khi focus */
+}
+
+.btn {
+    border-radius: 0; /* Loại bỏ bo tròn góc của nút */
+}
+
+.input-field {
+    width: 200px; /* Độ rộng của ô nhập liệu */
+    border-left: none; /* Loại bỏ đường viền trái cho input */
+    border-right: none; /* Loại bỏ đường viền phải cho input */
+}
+
+.btn:first-of-type {
+    border-right: none; /* Loại bỏ đường viền phải cho nút đầu tiên */
+}
+
+.btn:last-of-type {
+    border-left: none; /* Loại bỏ đường viền trái cho nút thứ hai */
+}
+
+.button-container > *:not(:first-child) {
+    margin-left: -4px; /* Điều chỉnh vị trí để các phần tử dính sát vào nhau */
+}
+
+
+</style>
+<body>
+    <div class="button-container">
+        <button class="btn">Button 1</button>
+        <input type="text" class="input-field" placeholder="Enter text here">
+        <button class="btn">Button 2</button>
+    </div>
+</body>
+</html>

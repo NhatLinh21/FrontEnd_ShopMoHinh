@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <img class="card-prod" ng-src="{{sp.img}}" alt="" style="height: 800px; max-width: 100%;">
+            <div class="row" style="margin-left: auto;margin-right: auto">
+                <div class="col-md-4">
+                  <img src="TaiNguyen/414141500_754037502794668_4456893890827575781_n.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-4">
+                  <img src="TaiNguyen/416788440_4483558331868404_7559221792169565518_n.png" class="img-thumbnail" alt="">
+                </div>
+                <div class="col-md-4">
+                  <img src="TaiNguyen/416788440_4483558331868404_7559221792169565518_n.png" class="img-thumbnail" alt="">
+                </div>
+              </div>
+        </div>
+        <div class="col-md-5">
+            <div>
+                <h1>Chi Tiết Sản Phẩm {{id}}</h1>
+            </div>
+            <div>
+                <h3><strong>Tên Sản Phẩm: {{sp.name}}</strong></h3>
+            </div>
+            <div>
+                <h3><strong>Giá: {{sp.price | currency:'$':0}}</strong></h3>
+            </div>
+            <div class="col-md-7">
+                <div>
+                    <h3><strong>Chi Tiết: {{sp.chitietsp}}</strong></h3>
+                </div>
+                <h5>Chất liệu: PVC - ABS</h5>
+                <h5>--------------------</h5>
+                <h5>JOKER FACE SHOP</h5>
+                <h5>🏠 Add: Ngõ 25 Hàng Bạc, Hoàn Kiếm</h5>
+                <h5>⌚️ Opening: 10:30 - 20:00 (EveryDay)</h5>
+                <h5>🤳🏻 Instagram: jokerfacevn</h5>
+                <h5>☎️ Tel: 0964.666.805</h5>
+                <h5>✈️ Ship hàng COD toàn quốc !</h5>
+                <h5><a href=" www.jokerface.vn "> 🌎 Website:
+                        www.jokerface.vn</a></h5>
+            </div>
+            <button class="btn btn-success" ng-click="addToCart(sp)">Thêm Vào Giỏ Hàng</button>
+
+        </div>
+
+    </div>
+
+</div>

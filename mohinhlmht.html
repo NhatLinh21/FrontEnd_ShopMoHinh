@@ -1,0 +1,61 @@
+  <DIV style="font-size: xx-large; text-align: center;">
+    <P>SẢN PHẨM NỔI BẬT</P>
+  </DIV>
+<div style=" text-align: right;">
+  <button ng-click="sapxep='price'" class="btn btn{{(sapxep=='price')?'':'-outline'}}-outline-secondary">Giá Tăng</button>
+  <button ng-click="sapxep='-price'" class="btn btn{{(sapxep=='-price')?'':'-outline'}}-outline-secondary">Giá giảm</button>
+  <button ng-click="sapxep='name'" class="btn btn{{(sapxep=='name')?'':'-outline'}}-outline-secondary">Ten A->Z</button>
+  <button ng-click="sapxep='-name'" class="btn btn{{(sapxep=='-name')?'':'-outline'}}-outline-secondary">Tên Z->A</button>
+  <input type="text" class="form-control" ng-model="keyword" >
+
+</div>
+<div>
+  &ensp;
+</div>
+<div>
+  &ensp;
+</div>
+<div class="row">
+  <div class="col-md-3" ng-repeat="sp in dssp| filter:{name:keyword} |orderBy:sapxep| limitTo:limit:start "
+    style="margin-bottom: 30px;">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <img class="card-prod" ng-src="{{sp.img}}" alt="" style="height: 300px; max-width: 100%;">
+        <h5 class="card-title">{{sp.name | uppercase}}</h5> <!-- lowercase -->
+        <p class="card-text">giá: {{sp.price | currency:'đ':0}}</p>
+        <a href="#!detail/{{sp.id}}" class="btn btn-outline-info">Chi Tiết</a>
+        <button class="btn btn-outline-danger" ng-click="addToCart(sp)">Thêm Vào Giỏ Hàng</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  &ensp;
+</div>
+<div>
+  &ensp;
+</div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination" style=" justify-content: center;">
+    <li class="page-item">
+      <button class="page-link {{(page==1)?'disabled':''}}" href="#" aria-label="Previous" ng-click="chontrang(page-1)">
+        <span aria-hidden="true">&laquo;</span>
+      </button>
+    </li>
+    <li ng-repeat="trang in dsTrang" class="page-item {{ (trang==page)?'active':'' }}">
+      <button class="page-link" ng-click="chontrang(trang)"> {{trang}} </button>
+    </li>
+    <li class="page-item">
+      <button class="page-link {{(page==tongTrang)?'disabled':''}}" href="#" aria-label="Next"
+        ng-click="chontrang(page+1)">
+        <span aria-hidden="true">&raquo;</span>
+      </button>
+    </li>
+  </ul>
+</nav>
+<div>
+  &ensp;
+</div>
+<div>
+  &ensp;
+</div>
